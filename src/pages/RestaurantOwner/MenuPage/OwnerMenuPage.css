@@ -1,0 +1,114 @@
+.owner-menu-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.menu-main-section {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  font-size: 34px;
+  margin-bottom: 20px;
+  color: #c82333;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 15px;
+}
+
+.table-container {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.menu-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-data-table th,
+.menu-data-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.menu-data-table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.action-controls {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.action-btn-menu-add {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.action-btn-menu-view {
+  background-color: #dc1515;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.action-btn-add {
+  background-color: #13a744;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.action-btn:hover {
+  background-color: #d92525;
+}
+
+@media (max-width: 768px) {
+  .menu-data-table {
+    font-size: 14px;
+  }
+
+  .menu-data-table th,
+  .menu-data-table td {
+    padding: 8px;
+  }
+
+  .action-btn {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+
+  .table-container {
+    max-height: 400px;
+  }
+}

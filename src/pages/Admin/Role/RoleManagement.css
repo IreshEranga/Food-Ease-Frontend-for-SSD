@@ -1,0 +1,43 @@
+.adminRoleManagement-btnSection {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+  }
+  
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .table {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .thead-dark {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  .bungee-spice-regular {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .table-no-borders td, .table-no-borders th {
+    border: none !important;
+  }
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .adminRoleManagement-btnSection {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .form-control {
+      width: 100% !important;
+    }
+  }

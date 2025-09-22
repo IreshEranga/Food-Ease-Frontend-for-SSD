@@ -1,0 +1,24 @@
+/* Add to existing OrderSummary.css */
+
+/* PayHere-specific button style */
+.action-button.payhere {
+    background: #28a745; /* Green to align with original bg-green-600 */
+    color: #ffffff;
+    border: none;
+  }
+  
+  .action-button.payhere:hover {
+    background: #218838; /* Darker green on hover */
+    transform: translateY(-2px);
+  }
+  
+  .action-button.payhere:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .action-button.payhere:focus {
+    outline: 2px solid #218838;
+    outline-offset: 2px;
+  }

@@ -1,0 +1,28 @@
+.adminHome-container {
+    padding: 20px;
+  }
+  
+  .adminHome-stats {
+    margin-bottom: 24px;
+  }
+  
+  .adminHome-card {
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+  }
+  
+  .adminHome-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+    background-color: #f4f8af; 
+  }
+  
+  .adminHome-cardTitle {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .adminHome-cardValue {
+    font-size: 1.75rem;
+    margin: 0;
+  }

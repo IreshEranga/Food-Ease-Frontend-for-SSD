@@ -1,0 +1,242 @@
+/* OrderSummary.css */
+.order-summary-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .order-summary-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .order-summary-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+  }
+  
+  .order-details {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .detail-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+  
+  .detail-label {
+    font-weight: 600;
+    color: #4a4a4a;
+  }
+  
+  .detail-value {
+    color: #1a1a1a;
+  }
+  
+  .inline-icon {
+    margin-right: 0.5rem;
+    color: #ff6347;
+  }
+  
+  .order-items {
+    margin-bottom: 1.5rem;
+  }
+  
+  .items-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+  }
+  
+  .items-list {
+    list-style: none;
+  }
+  
+  .item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .item-name {
+    flex: 1;
+    color: #1a1a1a;
+  }
+  
+  .item-quantity {
+    width: 60px;
+    text-align: center;
+    color: #4a4a4a;
+  }
+  
+  .item-price {
+    width: 100px;
+    text-align: right;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  
+  .order-totals {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .total-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .total-label {
+    color: #4a4a4a;
+  }
+  
+  .total-value {
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  
+  .total-item.discount .total-value {
+    color: #28a745;
+  }
+  
+  .total-item.final .total-label,
+  .total-item.final .total-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ff6347;
+  }
+  
+  .order-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .action-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .action-button.primary {
+    background: #ff6347;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .action-button.primary:hover {
+    background: #e5533d;
+    transform: translateY(-2px);
+  }
+  
+  .action-button.secondary {
+    background: #ffffff;
+    color: #ff6347;
+    border: 2px solid #ff6347;
+  }
+  
+  .action-button.secondary:hover {
+    background: #fff5f3;
+    transform: translateY(-2px);
+  }
+  
+  .action-button.success {
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .action-button.success:hover {
+    background: #218838;
+    transform: translateY(-2px);
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #4a4a4a;
+    padding: 2rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .order-summary-container {
+      margin: 1rem;
+      padding: 0 0.5rem;
+    }
+  
+    .order-summary-title {
+      font-size: 1.5rem;
+    }
+  
+    .order-summary-card {
+      padding: 1rem;
+    }
+  
+    .detail-item {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  
+    .item {
+      flex-direction: column;
+      gap: 0.25rem;
+      align-items: flex-start;
+    }
+  
+    .item-quantity,
+    .item-price {
+      width: auto;
+      text-align: left;
+    }
+  
+    .order-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .action-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .order-actions {
+    margin-top: 1rem;
+    text-align: right;
+  }
+  
+  .action-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+  .action-button.primary {
+    background: #ff6347;
+    color: #ffffff;
+  }
+  
+  .action-button.primary:hover {
+    background: #e5533d;
+  }

@@ -1,0 +1,105 @@
+.offer-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.icon-button-add-offer {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.icon-button-add-offer:hover {
+  background-color: #218838;
+}
+
+.icon-button-delete-offer {
+  background-color: #bd1111;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.icon-button-delete-offer:hover {
+  background-color: #d22323;
+}
+
+.offer-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.offer-table th,
+.offer-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.offer-table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+
+.offer-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+.status-active {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-expired {
+  background-color: #dc3545;
+  color: white;
+}
+
+.status-inactive {
+  background-color: #6c757d;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .offer-table {
+    font-size: 0.9rem;
+  }
+
+  .offer-table th,
+  .offer-table td {
+    padding: 8px;
+  }
+
+  .icon-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

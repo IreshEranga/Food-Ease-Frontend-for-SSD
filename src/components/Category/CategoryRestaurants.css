@@ -1,0 +1,258 @@
+/* Page Container */
+.page-container {
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    padding: 20px;
+  }
+  
+  /* Page Title */
+  .page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Loading and Error States */
+  .loading, .error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.2rem;
+  }
+  
+  .error {
+    color: #e53e3e;
+  }
+  
+  /* No Results */
+  .no-results {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  /* Restaurants Grid */
+  .restaurants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Restaurant Card */
+  .restaurant-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: box-shadow 0.3s;
+  }
+  
+  .restaurant-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Restaurant Image */
+  .restaurant-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+  }
+  
+  /* Restaurant Details */
+  .restaurant-details {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .restaurant-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .restaurant-address {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* Separator Line */
+  .separator {
+    border: 0;
+    border-top: 2px solid #e0e0e0;
+    margin: 20px 0;
+  }
+  
+  /* Menu Grid */
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  /* Menu Card */
+  .menu-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Menu Image */
+  .menu-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Menu Details */
+  .menu-details {
+    flex: 1;
+    margin-bottom: 10px;
+  }
+  
+  .menu-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .menu-description {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 5px;
+    line-height: 1.4;
+  }
+  
+  .menu-price {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .menu-available {
+    font-size: 0.8rem;
+    color: #38a169;
+  }
+  
+  .menu-unavailable {
+    font-size: 0.8rem;
+    color: #e53e3e;
+  }
+  
+  /* Quantity and Add to Cart */
+  .quantity-add-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .quantity-display {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    width: 30px;
+    text-align: center;
+  }
+  
+  .add-to-cart-btn {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+  
+  /* No Menu Items */
+  .no-menu {
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .page-container {
+      padding: 15px;
+    }
+  
+    .page-title {
+      font-size: 1.5rem;
+    }
+  
+    .restaurants-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .restaurant-card {
+      padding: 15px;
+    }
+  
+    .restaurant-image {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .restaurant-name {
+      font-size: 1.3rem;
+    }
+  
+    .restaurant-address {
+      font-size: 0.9rem;
+    }
+  
+    .menu-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .menu-card {
+      padding: 8px;
+    }
+  
+    .menu-image {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .menu-name {
+      font-size: 1rem;
+    }
+  
+    .menu-description {
+      font-size: 0.8rem;
+    }
+  
+    .menu-price {
+      font-size: 0.85rem;
+    }
+  
+    .quantity-display {
+      font-size: 0.85rem;
+      width: 25px;
+    }
+  
+    .add-to-cart-btn {
+      font-size: 0.8rem;
+    }
+  }

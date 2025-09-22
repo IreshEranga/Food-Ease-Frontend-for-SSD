@@ -1,0 +1,199 @@
+.menu-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Slightly lighter overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden; /* Prevent background scrolling */
+}
+
+.menu-modal-container {
+  background: #fff; /* Pure white background */
+  padding: 20px;
+  width: 90%;
+  max-width: 400px; /* Matches the modal width in the image */
+  max-height: 80vh; /* Maximum height relative to viewport */
+  border-radius: 8px; /* Slightly rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  position: relative;
+  overflow-y: auto; /* Enable scrolling within the modal */
+  scrollbar-width: thin; /* For Firefox: thinner scrollbar */
+  scrollbar-color: #ccc transparent; /* For Firefox: scrollbar styling */
+}
+
+/* Custom scrollbar for Webkit browsers (Chrome, Safari) */
+.menu-modal-container::-webkit-scrollbar {
+  width: 8px; /* Thinner scrollbar */
+}
+
+.menu-modal-container::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track */
+}
+
+.menu-modal-container::-webkit-scrollbar-thumb {
+  background: #ccc; /* Light gray thumb */
+  border-radius: 4px;
+}
+
+.menu-modal-container::-webkit-scrollbar-thumb:hover {
+  background: #999; /* Darker gray on hover */
+}
+
+.menu-modal-container h3 {
+  margin: 0 0 20px;
+  font-size: 1.3rem; /* Slightly smaller heading */
+  color: #0b487e; /* Blue color for the heading */
+  text-align: center;
+  font-weight: 600;
+}
+
+.menu-modal-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form elements */
+}
+
+.menu-modal-container label {
+  font-weight: 500;
+  color: #333; /* Darker label text */
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.menu-modal-container input,
+.menu-modal-container textarea,
+.menu-modal-container select {
+  padding: 10px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Slightly rounded corners for inputs */
+  font-size: 0.9rem;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.menu-modal-container input:focus,
+.menu-modal-container textarea:focus,
+.menu-modal-container select:focus {
+  outline: none;
+  border-color: #007bff; /* Blue border on focus */
+}
+
+.menu-modal-container textarea {
+  resize: vertical;
+  min-height: 60px; /* Shorter textarea */
+}
+
+.menu-modal-container select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+  color: #666; /* Placeholder-like color for "Select Category" */
+}
+
+.menu-modal-container select:invalid {
+  color: #666; /* Ensure "Select Category" placeholder text is gray */
+}
+
+.menu-modal-container select option {
+  color: #333; /* Options in black */
+}
+
+.menu-modal-container input[type="file"] {
+  padding: 5px 0; /* Adjust padding for file input */
+  border: none; /* Remove border for file input */
+}
+
+.menu-modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px; /* Space above buttons */
+}
+
+.menu-modal-actions .confirm-btn {
+  background-color: #28a745; /* Green button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.menu-modal-actions .confirm-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.menu-modal-actions .dismiss-btn {
+  background-color: #f8f9fa; /* Light gray background for Cancel button */
+  color: #333;
+  padding: 10px 20px;
+  border: 1px solid #ccc; /* Border for Cancel button */
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.menu-modal-actions .dismiss-btn:hover {
+  background-color: #e9ecef; /* Slightly darker gray on hover */
+}
+
+/* Close button styles */
+.menu-modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #666; /* Gray color for the X */
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: color 0.2s ease;
+}
+
+.menu-modal-close-btn:hover {
+  color: #c82333; /* Red on hover to match the heading color */
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .menu-modal-container {
+    width: 95%;
+    padding: 15px;
+    max-height: 85vh; /* Slightly more height on smaller screens */
+  }
+
+  .menu-modal-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .menu-modal-container input,
+  .menu-modal-container textarea,
+  .menu-modal-container select {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .menu-modal-actions .confirm-btn,
+  .menu-modal-actions .dismiss-btn {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+
+  .menu-modal-close-btn {
+    font-size: 1.1rem;
+    top: 8px;
+    right: 8px;
+  }
+}

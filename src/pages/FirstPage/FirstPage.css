@@ -1,0 +1,47 @@
+  .FirstPage-mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #FF7043; 
+  }
+  
+  .FirstPage-logo {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; 
+    border: 3px solid white; 
+    animation: 
+      slideFromLeft 2s ease-out forwards, 
+      heartbeat 1s ease-in-out 2s infinite; 
+  }
+  
+  @keyframes slideFromLeft {
+    0% {
+      transform: translateX(-100vw); 
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0); 
+      opacity: 1;
+    }
+  }
+  
+  @keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    20% {
+      transform: scale(1.2); 
+    }
+    40% {
+      transform: scale(1); 
+    }
+    60% {
+      transform: scale(1.1); 
+    }
+    80% {
+      transform: scale(1); 
+    }
+  }

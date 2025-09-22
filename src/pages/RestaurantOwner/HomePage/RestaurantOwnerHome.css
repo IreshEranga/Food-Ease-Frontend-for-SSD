@@ -1,0 +1,147 @@
+/*html, body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}*/
+
+.home-page-wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.home-content-area {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurantOwnerHome-container {
+    padding: 30px;
+    height: 100%;
+    /*background-color: #FFF2AF;*/
+    overflow-y: auto;
+}
+
+.restaurantOwnerHome-stats {
+    margin-bottom: 24px;
+}
+
+.restaurantOwnerHome-card {
+    transition: all 0.3s ease;
+    background-color: #d2d2d2;
+    border: none;
+    border-radius: 8px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.restaurantOwnerHome-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #f7edbb;
+}
+
+.restaurantOwnerHome-cardTitle {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.restaurantOwnerHome-cardValue {
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.restaurantOwnerHome-card-chart {
+    transition: all 0.3s ease;
+    background-color: #d2d2d2;
+    border: none;
+    border-radius: 8px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.restaurantOwnerHome-card-chart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #f7edbb;
+}
+
+.restaurantOwnerHome-loading {
+    font-size: 1.125rem;
+    color: #6b7280;
+    text-align: center;
+}
+
+.restaurantOwnerHome-error {
+    font-size: 1.125rem;
+    color: #dc2626;
+    text-align: center;
+}
+
+.home-chart-container {
+    height: 400px;
+    width: 100%;
+}
+
+.home-title {
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.home-error-text {
+    font-size: 1.5rem;
+    color: #dc2626;
+    text-align: center;
+}
+
+.home-loading-text {
+    font-size: 1.125rem;
+    color: #6b7280;
+    text-align: center;
+}
+
+.home-loading-gif {
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 768px) {
+    .restaurantOwnerHome-container {
+        padding: 10px;
+    }
+
+    .restaurantOwnerHome-card {
+        padding: 10px;
+    }
+
+    .restaurantOwnerHome-cardTitle {
+        font-size: 0.9rem;
+    }
+
+    .restaurantOwnerHome-cardValue {
+        font-size: 1.5rem;
+    }
+
+    .home-chart-container {
+        max-height: 150px;
+    }
+
+    .home-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .home-loading-gif {
+        width: 30px;
+        height: 30px;
+    }
+}

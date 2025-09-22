@@ -1,0 +1,124 @@
+.offer-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: auto; /* Ensure backdrop supports scrolling if modal overflows */
+}
+
+.offer-modal-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  max-height: calc(100vh - 40px); /* Limit height to viewport height minus padding */
+  overflow-y: auto; /* Enable vertical scrolling */
+  position: relative;
+  box-sizing: border-box;
+}
+
+.offer-modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.offer-modal-container h3 {
+  margin: 0 0 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.offer-modal-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.offer-modal-container label {
+  font-weight: bold;
+}
+
+.offer-modal-container input,
+.offer-modal-container textarea,
+.offer-modal-container select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.offer-modal-container textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.offer-modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.confirm-btn,
+.dismiss-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.confirm-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.dismiss-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background-color: #218838;
+}
+
+.dismiss-btn:hover {
+  background-color: #c82333;
+}
+
+/* Ensure modal is responsive on smaller screens */
+@media (max-width: 600px) {
+  .offer-modal-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .offer-modal-container h3 {
+    font-size: 1.3rem;
+  }
+
+  .offer-modal-container input,
+  .offer-modal-container textarea,
+  .offer-modal-container select {
+    font-size: 0.9rem;
+  }
+
+  .confirm-btn,
+  .dismiss-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}

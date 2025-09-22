@@ -1,0 +1,376 @@
+.owner-orders-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.orders-main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.orders-search-filter {
+  background: #fff;
+  padding: 15px;
+  /*border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+  margin-bottom: 10px;
+}
+
+/* Enhanced Tabs Container */
+.orders-status-tabs {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0;
+}
+
+.orders-status-tabs .nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Tab Items with Borders */
+.orders-status-tabs .nav-item {
+  position: relative;
+  margin-right: 0;
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.orders-status-tabs .nav-item:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
+}
+
+.status-tab-title {
+  position: relative;
+  padding: 5px 10px;
+  display: block;
+}
+
+.order-count-badge {
+  position: absolute;
+  top: -5px;
+  right: 5px;
+  background: #2980b9;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Tab Links Styling */
+.orders-status-tabs .nav-link {
+  color: #495057;
+  border: none;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  font-weight: 500;
+  border-radius: 0;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: transparent;
+}
+
+.orders-status-tabs .nav-link:hover {
+  color: #2980b9;
+  background-color: rgba(41, 128, 185, 0.05);
+}
+
+/* Active Tab Styling */
+.orders-status-tabs .nav-link.active {
+  color: #2980b9;
+  background-color: transparent;
+  font-weight: 600;
+  border-bottom: 3px solid #2980b9;
+}
+
+.orders-status-tabs .nav-link.active .order-count-badge {
+  background-color: #2980b9;
+  color: white;
+}
+
+/* Tab Content Animation */
+.order-tab-content {
+  animation: fadeIn 0.3s ease-in-out;
+  padding: 20px;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section Styling */
+.order-status-section, .completed-orders-section {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  margin-top: -15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-status-header, .completed-orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sort-info {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+/* Table Styling */
+.table-container {
+  overflow-x: auto;
+  max-height: 500px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.orders-data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-data-table th,
+.orders-data-table td {
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  text-align: left;
+}
+
+.orders-data-table th {
+  background-color: #f8f9fa;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 8px;
+}
+
+.orders-data-table th.sortable {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.orders-data-table th.sortable:hover {
+  background-color: #e9ecef;
+}
+
+.sort-icon {
+  margin-left: 5px;
+  color: #6c757d;
+}
+
+/* Status Badges */
+.order-payment-status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.85rem;
+  display: inline-block;
+  min-width: 60px;
+  text-align: center;
+}
+
+.order-payment-status-paid {
+  background-color: #28a745;
+}
+
+.order-payment-status-unpaid {
+  background-color: #dc3545;
+}
+
+/* Action Buttons */
+.action-button-confirm {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.action-button-confirm:hover {
+  background-color: #218838;
+}
+
+/* Pagination */
+.orders-pagination {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Empty State */
+.no-orders {
+  text-align: center;
+  padding: 30px !important;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* Filter Controls */
+/* Add these styles to your CSS file */
+
+.completed-filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.completed-filter-btn {
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  border: 1px solid #e0e0e0;
+  background: white;
+  transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
+  color: #495057;
+}
+
+.completed-filter-btn:hover {
+  background: #f8f9fa;
+  border-color: #d0d0d0;
+}
+
+.completed-filter-btn.active {
+  background-color: #2980b9;
+  color: white;
+  border-color: #2980b9;
+  font-weight: 500;
+  box-shadow: 0 0 0 2px rgba(41, 128, 185, 0.2);
+}
+
+.completed-download-btn {
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #28a745;
+  color: white;
+  border: none;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.completed-download-btn:hover {
+  background: #218838;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .completed-filter-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .completed-filter-btn,
+  .completed-download-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* Form Controls */
+.payment-filter-select {
+  max-width: 200px;
+  margin-right: 10px;
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+
+.download-all-btn {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .orders-search-filter .col-md-6 {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .payment-filter-select {
+    max-width: none;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .completed-filter-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .order-status-header, .completed-orders-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .orders-status-tabs .nav-item {
+    flex: 0 0 50%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .orders-status-tabs .nav-link {
+    padding: 10px 5px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .orders-status-tabs .nav-item {
+    flex: 0 0 100%;
+  }
+  
+  .status-tab-title {
+    padding: 8px 10px;
+  }
+  
+  .order-count-badge {
+    right: 2px;
+    top: 2px;
+  }
+}

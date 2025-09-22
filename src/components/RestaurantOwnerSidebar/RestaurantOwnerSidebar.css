@@ -1,0 +1,32 @@
+.ros-sidebar-navItem {
+  color: white !important;
+  font-size: 1.1rem; 
+}
+
+.ros-sidebar-navItem:hover {
+  background-color: #ff4532;
+  color: white !important;
+}
+
+.ros-sidebar-container {
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.ros-sidebar-logoutBtn:hover {
+  background-color: #fff;
+  color: #ff6347 !important;
+}
+
+.ros-sidebar-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ros-sidebar-title {
+  margin: 0;
+  font-size: 1.5rem; 
+}
+
+.ros-sidebar-navText {
+  margin-left: 15px;
+  font-size: 1.1rem; 
+}

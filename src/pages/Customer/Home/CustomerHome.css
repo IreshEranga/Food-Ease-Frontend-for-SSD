@@ -1,0 +1,49 @@
+.CustomerHome-container {
+    display: flex;
+    min-height: 100vh;
+    /*font-family: 'Poppins', sans-serif;*/
+    background-color: #FFF8F8;
+  }
+  
+  .CustomerHome-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #FFF8F8;
+    position: relative;
+  }
+  
+  .CustomerHome-greeting {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #c45b22;
+    margin-right: 150px;
+  }
+  
+  .CustomerHome-spacer {
+    height: 30px;
+  }
+  
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .CustomerHome-container {
+      flex-direction: column;
+    }
+  
+    .CustomerHome-content {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .CustomerHome-greeting {
+      font-size: 1.5rem;
+      margin-right: 0;
+      margin-top: 40px; 
+      text-align: center;
+    }
+  
+    .CustomerHome-spacer {
+      height: 60px; 
+    }
+  }

@@ -1,0 +1,3 @@
+.table-no-borders td, .table-no-borders th {
+    border: none !important;
+  }

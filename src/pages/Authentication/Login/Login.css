@@ -1,0 +1,360 @@
+.Login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #FFFFFF;
+}
+
+.login-card {
+  margin: 50px;
+  display: flex;
+  min-height: 80vh;
+  border-radius: 35px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Left section */
+.Login-illustration {
+  flex: 1;
+  background-color: #FFDAB9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.Login-illustration-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Right section: Login form */
+.Login-form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: #FFFFFF;
+}
+
+/* Title */
+.Login-title {
+  font-size: 32px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.login-title-fletter,
+.login-title-lletter {
+  color: #FF7043;
+  font-size: 50px;
+  font-family: cursive;
+}
+
+/* Subtitle */
+.Login-subtitle {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 30px;
+}
+
+/* Form */
+.Login-form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input fields */
+.Login-input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-input-container {
+  position: relative;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.uniform-input {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.login-password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.login-password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.login-eye-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.login-error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.Login-input:focus {
+  border-color: #FF7043;
+}
+
+.Login-recover-link {
+  align-self: flex-end;
+  font-size: 14px;
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.Login-recover-link:hover {
+  text-decoration: underline;
+}
+
+/* Sign-in button */
+.Login-signin-btn {
+  padding: 12px;
+  background-color: #FF7043;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Login-signin-btn:hover {
+  background-color: #E65C2F;
+}
+
+/* Social login section */
+.Login-social-login {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.Login-social-text {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 10px;
+}
+
+/* Social buttons container */
+.Login-social-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Social login buttons */
+.Login-social-btn {
+  width: 40px;
+  height: 40px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Login-social-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Register link */
+.Login-register-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.Login-register-link a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.Login-register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .Login-container {
+    padding: 20px;
+    background: linear-gradient(135deg, #FFF8F8, #f7f9fc);
+  }
+
+  .login-card {
+    flex-direction: column;
+    margin: 20px 0;
+    min-height: auto;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    max-width: 90%;
+  }
+
+  .Login-illustration {
+    display: none; /* Hide illustration for mobile */
+  }
+
+  .Login-form-section {
+    padding: 30px 20px;
+    justify-content: flex-start;
+  }
+
+  .Login-title {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-title-fletter,
+  .login-title-lletter {
+    font-size: 40px;
+  }
+
+  .Login-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .Login-form {
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .login-input-container {
+    margin-bottom: 0.8rem;
+  }
+
+  .Login-input {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .Login-input:focus {
+    border-color: #FF7043;
+    box-shadow: 0 0 8px rgba(255, 112, 67, 0.3);
+    transform: scale(1.02);
+  }
+
+  .login-password-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .login-password-toggle {
+    right: 12px;
+  }
+
+  .login-eye-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .login-error-message {
+    font-size: 0.75rem;
+    margin-top: 0.2rem;
+  }
+
+  .Login-recover-link {
+    font-size: 13px;
+    align-self: center;
+    margin-top: 10px;
+  }
+
+  .Login-signin-btn {
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #FF7043, #E65C2F);
+    box-shadow: 0 4px 12px rgba(255, 112, 67, 0.4);
+    transition: all 0.3s ease;
+  }
+
+  .Login-signin-btn:hover {
+    background: linear-gradient(45deg, #E65C2F, #D04F28);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 112, 67, 0.5);
+  }
+
+  .Login-signin-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  .Login-social-login {
+    margin-top: 15px;
+  }
+
+  .Login-social-text {
+    font-size: 13px;
+  }
+
+  .Login-social-buttons {
+    gap: 8px;
+  }
+
+  .Login-social-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .Login-social-btn:hover {
+    background-color: #d5d5d5;
+    transform: scale(1.1);
+  }
+
+  .Login-register-link {
+    margin-top: 15px;
+    font-size: 13px;
+    text-align: center;
+  }
+}

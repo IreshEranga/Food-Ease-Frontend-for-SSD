@@ -1,0 +1,181 @@
+.customer-profile-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #FFF8F8, #f7f9fc);
+  }
+  
+  .profile-content {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+    background-color: #FFF8F8;
+  }
+  
+  .location-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .location-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .location-text {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  
+  .profile-card {
+    max-width: 500px;
+    margin: 60px auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .profile-icon {
+    margin-bottom: 20px;
+  }
+  
+  .profile-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 1.8rem;
+  }
+  
+  .profile-info {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .info-icon {
+    margin-right: 8px;
+  }
+  
+  .profile-actions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .delivery-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 6px;
+  }
+  
+  .delivery-location {
+    color: #555;
+    margin-top: 6px;
+    font-size: 14px;
+  }
+  
+  .action-button-profile {
+    margin-top: 10px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 180px; 
+    text-align: center;
+  }
+  
+  .change-location {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .change-location:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+  }
+  
+  .edit-profile {
+    background-color: #2980b9;
+    color: white;
+  }
+  
+  .edit-profile:hover {
+    background-color: #1f618d;
+    transform: translateY(-2px);
+  }
+  
+  .logout-button {
+    background-color: #c0392b;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .logout-button:hover {
+    background-color: #96281b;
+    transform: translateY(-2px);
+  }
+  
+  .logout-icon {
+    margin-right: 4px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .customer-profile-container {
+      flex-direction: column;
+    }
+  
+    .profile-content {
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .profile-card {
+      margin: 15px auto; 
+      margin-top: -100px;
+      padding: 20px;
+      max-width: 90%;
+      width: 100%;
+    }
+  
+    .profile-name {
+      font-size: 1.5rem;
+    }
+  
+    .profile-info {
+      font-size: 14px;
+    }
+  
+    .profile-actions {
+      flex-direction: column; 
+    }
+  
+    .action-button-profile {
+      padding: 6px 12px;
+      font-size: 13px;
+      width: 140px; 
+      margin: 5px 0; 
+    }
+  }

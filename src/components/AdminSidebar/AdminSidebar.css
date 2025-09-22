@@ -1,0 +1,53 @@
+.adminSidebar-navItem {
+    color: white !important;
+  }
+  
+  .adminSidebar-navItem:hover {
+    background-color: #ff4532;
+    color: white !important;
+  }
+  
+  .adminSidebar-container {
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .adminSidebar-logoutBtn:hover {
+    background-color: #fff;
+    color: #ff6347 !important;
+  }
+  
+  .adminSidebar-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .adminSidebar-title {
+    margin: 0;
+  }
+  
+  .adminSidebar-navText {
+    margin-left: 15px;
+  }
+
+/* Dropdown Styles */
+ .adminSidebar-dropdown .dropdown-toggle {
+  color: white !important;
+  background-color: transparent ;
+  border: none !important;
+  padding: 0 !important;
+}
+
+
+.adminSidebar-dropdown .dropdown-menu {
+  background-color: #ff6347;
+  border: none;
+  margin-left: 15px;
+}
+
+.adminSidebar-dropdown .dropdown-item {
+  color: white;
+}
+
+.adminSidebar-dropdown .dropdown-item:hover {
+  background-color: #ff4532;
+  color: white;
+}
