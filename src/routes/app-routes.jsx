@@ -60,7 +60,7 @@ const AppRoutes = () => {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/reset-password" element={<ResetPassword />} />
-                <Route path="/api/users/auth/google" element={<AuthCallback />} />
+                <Route path="/auth/callback" element={<AuthCallback />} />
                 
                 <Route element={<CheckLoginStatus />}>
                     <Route path="/login" element={<Login />} />
