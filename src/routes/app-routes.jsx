@@ -8,6 +8,7 @@ import Login from "../pages/Authentication/Login/Login";
 import Signup from "../pages/Authentication/Signup/Signup";
 import ForgotPassword from "../pages/Authentication/RecoverPassword/ForgotPassword";
 import ResetPassword from "../pages/Authentication/RecoverPassword/ResetPassword";
+import AuthCallback from '../context/AuthCallback';
 
 /* ---------------------------- Admin Pages ----------------------------*/
 import AdminHome from "../pages/Admin/Home/AdminHome";
@@ -59,6 +60,7 @@ const AppRoutes = () => {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/reset-password" element={<ResetPassword />} />
+                <Route path="/auth/callback" element={<AuthCallback />} />
                 
                 <Route element={<CheckLoginStatus />}>
                     <Route path="/login" element={<Login />} />
