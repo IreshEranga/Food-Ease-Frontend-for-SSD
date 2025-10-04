@@ -469,6 +469,7 @@ import './Login.css';
 import illustration from '../../../assets/Images/Login2.png';
 import eyeHide from '../../../assets/Images/eye_hide.png';
 import eyeView from '../../../assets/Images/eye_View.png';
+import google from '../../../assets/Images/google.png';
 
 function Login() {
   const [loginFormData, setLoginFormData] = useState({
@@ -538,7 +539,7 @@ function Login() {
     }
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_API}/api/users/login`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_API}/api/users/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -552,7 +553,7 @@ function Login() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Login failed");
+        throw new Error(data.error || data.message || "Login failed");
       }
 
       const token = data.token;
@@ -678,7 +679,8 @@ function Login() {
             <p className="Login-social-text">Or continue with</p>
             <div className="Login-social-buttons">
               <button className="Login-social-btn google-btn" onClick={handleGoogleLogin}>
-                <span className="Login-social-icon">G</span> Google
+                {/* <span className="Login-social-icon"><img src={google} alt="Google logo" /></span> Google */}
+                <img src={google} alt="Google logo" className="google-logo" />
               </button>
             </div>
           </div>
