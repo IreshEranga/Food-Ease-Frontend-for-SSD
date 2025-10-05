@@ -28,7 +28,7 @@ h1 {
   margin: 20px 0;
 }
 
-.create-restaurant-btn {
+.action-btn-add {
   background-color: #28a745;
   color: white;
   padding: 10px 20px;
@@ -38,7 +38,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-.create-restaurant-btn:hover {
+.action-btn-add:hover {
   background-color: #218838;
 }
 
@@ -84,13 +84,17 @@ h1 {
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border: 1px solid #ddd;
+  table-layout: fixed;
 }
 
 .restaurant-data-table th,
 .restaurant-data-table td {
-  padding: 12px;
+  padding: 6px;
   text-align: left;
   border: 1px solid #ddd;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-size: 12px;
 }
 
 .restaurant-data-table th {
@@ -99,14 +103,18 @@ h1 {
   position: sticky;
   top: 0;
   z-index: 1;
+  font-size: 11px;
 }
 
 .restaurant-data-table select,
 .restaurant-data-table button {
-  padding: 8px;
+  padding: 4px;
   border-radius: 4px;
   border: 1px solid #ccc;
   cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 12px;
 }
 
 .restaurant-data-table button {
@@ -142,16 +150,20 @@ h1 {
   margin: 0 5px;
 }
 
+.action-button-delete {
+  color: #dc3545;
+}
+
 .action-button-edit:hover {
   color: #007bff;
 }
 
 .action-button-delete:hover {
-  color: #dc3545;
+  color: #c82333;
 }
 
 .restaurant-data-table img {
-  max-width: 60px; 
+  max-width: 40px; 
   height: auto;
   border-radius: 4px;
 }
@@ -171,7 +183,15 @@ h1 {
 
 .status-column select {
   width: 100%;
-  padding: 5px;
+  padding: 2px;
+}
+.action-column {
+  width: 80px; 
+}
+
+.action-column select {
+  width: 100%;
+  padding: 2px;
 }
 
 .restaurant-pagination {
@@ -194,16 +214,16 @@ h1 {
 
 @media (max-width: 768px) {
   .restaurant-data-table {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .restaurant-data-table th,
   .restaurant-data-table td {
-    padding: 8px;
+    padding: 4px;
   }
 
   .restaurant-data-table img {
-    max-width: 40px;
+    max-width: 30px;
   }
 
   .status-column {

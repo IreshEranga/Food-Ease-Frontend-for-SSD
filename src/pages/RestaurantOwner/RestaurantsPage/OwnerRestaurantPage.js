@@ -7,7 +7,7 @@ import RestaurantOwnerSidebar from '../../../components/RestaurantOwnerSidebar/R
 import './OwnerRestaurantPage.css';
 import Toast from '../../../utils/toast';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlusSquare, faTrashCan, faDownload } from '@fortawesome/free-solid-svg-icons';
+import { faPlusSquare, faTimes, faDownload, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Form, Row, Col, InputGroup, Button, Pagination } from 'react-bootstrap';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
@@ -249,7 +249,6 @@ const OwnerRestaurantPage = () => {
 
     return (
       <>
-        <h4 style={{ paddingTop: '20px' }}>{tableType} Restaurants</h4>
         <div className="restaurant-table-container">
           <table className="restaurant-data-table">
             <thead>
@@ -267,14 +266,14 @@ const OwnerRestaurantPage = () => {
                 <th>Fri</th>
                 <th>Sat</th>
                 <th>Sun</th>
-                {isApprovedTable ? <th className="status-column">Status</th> : <th>Approval Status</th>}
+                <th>Status</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {restaurantsToDisplay.length === 0 ? (
                 <tr>
-                  <td colSpan={16} style={{ textAlign: 'center', padding: '20px' }}>
+                  <td colSpan={15} style={{ textAlign: 'center', padding: '20px' }}>
                     No {tableType.toLowerCase()} restaurants found.
                   </td>
                 </tr>
@@ -291,7 +290,7 @@ const OwnerRestaurantPage = () => {
                         <img
                           src={restaurant.restaurantImage}
                           alt={restaurant.restaurantName}
-                          style={{ width: '50px', height: '50px', objectFit: 'cover' }}
+                          style={{ width: '40px', height: '40px', objectFit: 'cover' }}
                         />
                       ) : (
                         'No Image'
@@ -314,13 +313,13 @@ const OwnerRestaurantPage = () => {
                     ) : (
                       <td>{restaurant.approvalStatus}</td>
                     )}
-                    <td style={{ textAlign: 'center' }}>
+                    <td className="action-column" style={{ textAlign: 'center' }}>
                       <button
                         className="action-button-delete"
                         onClick={() => handleDeleteRestaurant(restaurant.restaurantId)}
                         title="Delete"
                       >
-                        <FontAwesomeIcon icon={faTrashCan} />
+                        <FontAwesomeIcon icon={faTimes} />
                       </button>
                     </td>
                   </tr>
@@ -419,6 +418,9 @@ const OwnerRestaurantPage = () => {
         <Row className="mb-3">
           <Col md={6}>
             <InputGroup>
+              <InputGroup.Text>
+                <FontAwesomeIcon icon={faSearch} />
+              </InputGroup.Text>
               <Form.Control
                 type="text"
                 placeholder="Search by name or branch"

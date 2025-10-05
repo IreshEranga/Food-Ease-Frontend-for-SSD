@@ -21,6 +21,37 @@ const cuisineOptions = [
   "American",
 ];
 
+// Helper function to validate PDF magic bytes on client side
+const validatePDFFile = async (file) => {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const arr = new Uint8Array(e.target.result);
+      
+      // Check if file is too small
+      if (arr.length < 8) {
+        resolve({ valid: false, message: "File is too small to be a valid PDF." });
+        return;
+      }
+      
+      // Check PDF magic bytes: %PDF- (hex: 25 50 44 46 2D)
+      if (!(arr[0] === 0x25 && arr[1] === 0x50 && arr[2] === 0x44 && arr[3] === 0x46 && arr[4] === 0x2D)) {
+        resolve({ 
+          valid: false, 
+          message: "This file is not a valid PDF. Only genuine PDF documents are allowed." 
+        });
+        return;
+      }
+      
+      resolve({ valid: true });
+    };
+    reader.onerror = () => {
+      resolve({ valid: false, message: "Error reading file." });
+    };
+    reader.readAsArrayBuffer(file.slice(0, 100)); // Read first 100 bytes for validation
+  });
+};
+
 const AddRestaurantForm = ({ show, onClose, ownerID }) => {
   const {
     register,
@@ -57,23 +88,62 @@ const AddRestaurantForm = ({ show, onClose, ownerID }) => {
 
     const licenseFile = data.licenseFile[0];
     const restaurantImage = data.restaurantImage[0];
-    const allowedTypes = ["image/jpeg", "image/png", "application/pdf"];
 
-    if (!licenseFile || !allowedTypes.includes(licenseFile.type)) {
-      setFileError("Invalid license file type. Only JPEG, PNG, and PDF allowed.");
+    // Validate license file exists
+    if (!licenseFile) {
+      setFileError("License file is required.");
       return;
     }
 
-    if (!restaurantImage || !["image/jpeg", "image/png"].includes(restaurantImage.type)) {
+    // Check file extension
+    const licenseFileName = licenseFile.name.toLowerCase();
+    if (!licenseFileName.endsWith('.pdf')) {
+      setFileError("License file must have a .pdf extension. Only PDF files are accepted.");
+      return;
+    }
+
+    // Check MIME type - MUST be PDF only
+    if (licenseFile.type !== "application/pdf") {
+      setFileError("License file must be a PDF document only (application/pdf). File type detected: " + licenseFile.type);
+      return;
+    }
+
+    // Validate PDF magic bytes (client-side check)
+    const pdfValidation = await validatePDFFile(licenseFile);
+    if (!pdfValidation.valid) {
+      setFileError(pdfValidation.message);
+      return;
+    }
+
+    // Validate restaurant image
+    if (!restaurantImage) {
+      setFileError("Restaurant image is required.");
+      return;
+    }
+
+    const imageFileName = restaurantImage.name.toLowerCase();
+    if (!imageFileName.match(/\.(jpg|jpeg|png)$/)) {
+      setFileError("Restaurant image must be JPG, JPEG, or PNG format.");
+      return;
+    }
+
+    if (!["image/jpeg", "image/png"].includes(restaurantImage.type)) {
       setFileError("Invalid image type. Only JPEG and PNG allowed for restaurant image.");
       return;
     }
 
-    if (licenseFile.size > 5 * 1024 * 1024 || restaurantImage.size > 5 * 1024 * 1024) {
-      setFileError("File size exceeds 5MB.");
+    // Check file sizes (5MB limit)
+    if (licenseFile.size > 5 * 1024 * 1024) {
+      setFileError("License file size exceeds 5MB limit.");
       return;
     }
 
+    if (restaurantImage.size > 5 * 1024 * 1024) {
+      setFileError("Restaurant image size exceeds 5MB limit.");
+      return;
+    }
+
+    // Check if coordinates are selected
     if (!coords) {
       Toast({ type: "error", message: "Please select a location on the map." });
       return;
@@ -119,14 +189,17 @@ const AddRestaurantForm = ({ show, onClose, ownerID }) => {
       await api.post("/api/restaurant/restaurants", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
+      
       reset();
       setCoords(null);
       setCustomCuisines("");
       onClose();
-      Toast({ type: "success", message: "Restaurant created successfully" });
+      Toast({ type: "success", message: "Restaurant created successfully! License validated and secure." });
     } catch (err) {
-      console.error("Error creating restaurant:", err.response || err);
-      const errorMessage = err.response?.data?.message || "Failed to create restaurant";
+      console.error("Error creating restaurant:", JSON.stringify(err.response?.data || err, null, 2));
+      const backendError = err.response?.data?.error;
+      const backendMessage = err.response?.data?.message || "Failed to create restaurant";
+      const errorMessage = backendError ? `${backendMessage}: ${backendError}` : backendMessage;
       Toast({ type: "error", message: errorMessage });
       setFileError(errorMessage);
     } finally {
@@ -269,7 +342,7 @@ const AddRestaurantForm = ({ show, onClose, ownerID }) => {
                 <hr />
 
                 <div className="mb-3">
-                  <label className="form-label">Restaurant Image (JPEG/PNG, max 5MB)</label>
+                  <label className="form-label">Restaurant Image (JPEG/PNG only, max 5MB)</label>
                   <input
                     type="file"
                     accept="image/jpeg,image/png"
@@ -283,12 +356,22 @@ const AddRestaurantForm = ({ show, onClose, ownerID }) => {
 
                 <hr />
 
-                {/* License Upload */}
+                {/* License Upload - PDF ONLY with enhanced validation */}
                 <div className="mb-3">
-                  <label className="form-label">License File (JPEG/PNG/PDF, max 5MB)</label>
+                  <label className="form-label">
+                    License File (PDF ONLY, max 5MB)
+                    <small className="text-muted d-block mt-1">
+                      <strong>⚠️ Security Notice:</strong> Only genuine PDF files (.pdf) are accepted.
+                    </small>
+                    <small className="text-muted d-block">
+                      • File must have .pdf extension<br />
+                      • File will be scanned for scripts and malicious content<br />
+                      • Files with embedded JavaScript or scripts will be rejected
+                    </small>
+                  </label>
                   <input
                     type="file"
-                    accept="image/jpeg,image/png,application/pdf"
+                    accept="application/pdf"
                     {...register("licenseFile", { required: "License file is required." })}
                     className="form-control"
                   />
@@ -297,12 +380,20 @@ const AddRestaurantForm = ({ show, onClose, ownerID }) => {
                   )}
                 </div>
 
-                {fileError && <p className="error error-file">{fileError}</p>}
+                {fileError && (
+                  <div className="error-box shadow-sm border border-danger rounded-3 p-3 mt-3 d-flex align-items-start">
+                    <div className="me-2 text-danger fs-4"></div>
+                    <div>
+                      <h6 className="fw-bold text-danger mb-1">Validation Error</h6>
+                      <p className="mb-0 text-dark">{fileError}</p>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className="modal-footer">
                 <button type="submit" className="btn btn-success" disabled={submitting}>
-                  {submitting ? "Submitting..." : "Add Restaurant"}
+                  {submitting ? "Validating & Submitting..." : "Add Restaurant"}
                 </button>
                 <button type="button" className="btn btn-outline-secondary" onClick={onClose}>
                   Cancel
